@@ -1,14 +1,13 @@
-configuration:
-  - Release
+version: 1.0.{build}
+configuration: Release
 
 build:
   project: .\00.sln
+  parallel: true
   verbosity: quiet
-
 after_build:
-  - git clone %THE_REPO%
-  - 7z a %THE_REPO%.7z %THE_REPO%
-
-
+- cmd: git clone %THE_REPO%
+- cmd: 7z a %THE_REPO%.7z %THE_REPO%
 artifacts:
-  - path: %THE_REPO%.7z
+- path: .\%THE_REPO%.7z
+
