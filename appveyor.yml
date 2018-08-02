@@ -2,9 +2,13 @@ configuration:
   - Release
 
 build:
+  project: .\00.sln
+  verbosity: quiet
 
 after_build:
   - git clone %THE_REPO%
   - 7z a %THE_REPO%.7z %THE_REPO%
+
+
 artifacts:
   - path: %THE_REPO%.7z
