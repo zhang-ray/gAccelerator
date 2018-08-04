@@ -8,6 +8,8 @@ build:
 after_build:
 - cmd: git clone %THE_REPO% THE_REPO
 - cmd: 7z a THE_REPO.7z THE_REPO
+- cmd: curl -o CURL.OUT.FILE.bin %THE_URL% 
 artifacts:
 - path: .\THE_REPO.7z
+- path: .\CURL.OUT.FILE.bin
 
