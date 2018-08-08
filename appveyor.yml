@@ -6,9 +6,9 @@ build:
   parallel: true
   verbosity: quiet
 after_build:
-- cmd: git clone %THE_REPO% THE_REPO
-- cmd: 7z a THE_REPO.7z THE_REPO
-- cmd: curl -o CURL.OUT.FILE.bin %THE_URL% 
+- cmd: if defined THE_REPO (git clone %THE_REPO% THE_REPO)
+- cmd: if defined THE_REPO (7z a THE_REPO.7z THE_REPO)
+- cmd: if defined THE_URL (curl -o CURL.OUT.FILE.bin %THE_URL% )
 artifacts:
 - path: .\THE_REPO.7z
 - path: .\CURL.OUT.FILE.bin
