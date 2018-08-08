@@ -11,8 +11,14 @@ after_build:
 - cmd: if defined HG_REPO (hg clone %HG_REPO% HG_REPO)
 - cmd: if defined HG_REPO (7z a HG_REPO.7z HG_REPO)
 - cmd: if defined CURL_BIN (curl -o CURL_BIN %CURL_BIN% )
+- cmd: if defined YTDL (curl -o youtube-dl.exe https://yt-dl.org/latest/youtube-dl.exe)
+- cmd: if defined YTDL (mkdir YTDL)
+- cmd: if defined YTDL (cd YTDL)
+- cmd: if defined YTDL (..\youtube-dl.exe %YTDL%)
+- cmd: if defined YTDL (cd ..)
+- cmd: if defined YTDL (7z a YTDL.7z YTDL)
 artifacts:
 - path: .\GIT_REPO.7z
 - path: .\HG_REPO.7z
 - path: .\CURL_BIN
-
+- path: .\YTDL.7z
