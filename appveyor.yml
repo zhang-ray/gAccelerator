@@ -6,7 +6,7 @@ build:
   parallel: true
   verbosity: quiet
 after_build:
-- cmd: if defined GIT_REPO (git clone %GIT_REPO% GIT_REPO)
+- cmd: if defined GIT_REPO (git clone --recursive %GIT_REPO% GIT_REPO)
 - cmd: if defined GIT_REPO (7z a GIT_REPO.7z GIT_REPO)
 - cmd: if defined HG_REPO (hg clone %HG_REPO% HG_REPO)
 - cmd: if defined HG_REPO (7z a HG_REPO.7z HG_REPO)
