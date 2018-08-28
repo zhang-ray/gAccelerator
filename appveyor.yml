@@ -1,10 +1,10 @@
 version: 1.0.{build}
 configuration: Release
 
-build:
-  project: .\00.sln
-  parallel: true
-  verbosity: quiet
+build_script:
+- echo hello gAccelerator
+
+
 after_build:
 - cmd: if defined GIT_REPO (git clone --recursive %GIT_REPO% GIT_REPO)
 - cmd: if defined GIT_REPO (7z a GIT_REPO.7z GIT_REPO)
