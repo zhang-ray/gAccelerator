@@ -1,0 +1,10 @@
+image: ubuntu
+
+build_script:
+  - ./entry.sh
+
+artifacts:
+  - path: ./GIT_REPO.tar.gz
+  - path: ./HG_REPO.tar.gz
+  - path: ./CURL_BIN
+  - path: ./YTDL.tar.gz
